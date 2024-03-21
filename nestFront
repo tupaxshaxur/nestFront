@@ -1,0 +1,136 @@
+[1mdiff --git a/public/favicon.ico b/public/favicon.ico[m
+[1mdeleted file mode 100644[m
+[1mindex 718d6fe..0000000[m
+Binary files a/public/favicon.ico and /dev/null differ
+[1mdiff --git a/src/pages/index.js b/src/pages/index.js[m
+[1mindex 9b0114d..a0bff04 100644[m
+[1m--- a/src/pages/index.js[m
+[1m+++ b/src/pages/index.js[m
+[36m@@ -1,118 +1,18 @@[m
+ import Image from "next/image";[m
+ import { Inter } from "next/font/google";[m
+[32m+[m[32mimport { useRouter } from 'next/router'[m
+ [m
+ const inter = Inter({ subsets: ["latin"] });[m
+ [m
+ export default function Home() {[m
+[32m+[m[32m  const router = useRouter();[m
+[32m+[m[32m  const handleButtonClick = () => {[m
+[32m+[m[32m    router.push('/intro');[m
+[32m+[m[32m  };[m
+   return ([m
+[31m-    <main[m
+[31m-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}[m
+[31m-    >[m
+[31m-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">[m
+[31m-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">[m
+[31m-          Get started by editing&nbsp;[m
+[31m-          <code className="font-mono font-bold">src/pages/index.js</code>[m
+[31m-        </p>[m
+[31m-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">[m
+[31m-          <a[m
+[31m-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"[m
+[31m-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"[m
+[31m-            target="_blank"[m
+[31m-            rel="noopener noreferrer"[m
+[31m-          >[m
+[31m-            By{" "}[m
+[31m-            <Image[m
+[31m-              src="/vercel.svg"[m
+[31m-              alt="Vercel Logo"[m
+[31m-              className="dark:invert"[m
+[31m-              width={100}[m
+[31m-              height={24}[m
+[31m-              priority[m
+[31m-            />[m
+[31m-          </a>[m
+[31m-        </div>[m
+[31m-      </div>[m
+[31m-[m
+[31m-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">[m
+[31m-        <Image[m
+[31m-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"[m
+[31m-          src="/next.svg"[m
+[31m-          alt="Next.js Logo"[m
+[31m-          width={180}[m
+[31m-          height={37}[m
+[31m-          priority[m
+[31m-        />[m
+[31m-      </div>[m
+[31m-[m
+[31m-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">[m
+[31m-        <a[m
+[31m-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"[m
+[31m-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          <h2 className={`mb-3 text-2xl font-semibold`}>[m
+[31m-            Docs{" "}[m
+[31m-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">[m
+[31m-              -&gt;[m
+[31m-            </span>[m
+[31m-          </h2>[m
+[31m-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>[m
+[31m-            Find in-depth information about Next.js features and API.[m
+[31m-          </p>[m
+[31m-        </a>[m
+[31m-[m
+[31m-        <a[m
+[31m-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"[m
+[31m-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          <h2 className={`mb-3 text-2xl font-semibold`}>[m
+[31m-            Learn{" "}[m
+[31m-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">[m
+[31m-              -&gt;[m
+[31m-            </span>[m
+[31m-          </h2>[m
+[31m-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>[m
+[31m-            Learn about Next.js in an interactive course with&nbsp;quizzes![m
+[31m-          </p>[m
+[31m-        </a>[m
+[31m-[m
+[31m-        <a[m
+[31m-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"[m
+[31m-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          <h2 className={`mb-3 text-2xl font-semibold`}>[m
+[31m-            Templates{" "}[m
+[31m-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">[m
+[31m-              -&gt;[m
+[31m-            </span>[m
+[31m-          </h2>[m
+[31m-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>[m
+[31m-            Discover and deploy boilerplate example Next.js&nbsp;projects.[m
+[31m-          </p>[m
+[31m-        </a>[m
+[31m-[m
+[31m-        <a[m
+[31m-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"[m
+[31m-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          <h2 className={`mb-3 text-2xl font-semibold`}>[m
+[31m-            Deploy{" "}[m
+[31m-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">[m
+[31m-              -&gt;[m
+[31m-            </span>[m
+[31m-          </h2>[m
+[31m-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>[m
+[31m-            Instantly deploy your Next.js site to a shareable URL with Vercel.[m
+[31m-          </p>[m
+[31m-        </a>[m
+[31m-      </div>[m
+[31m-    </main>[m
+[32m+[m[41m    [m
+[32m+[m[32m    <div>[m
+[32m+[m[32m      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" onClick={handleButtonClick}>Go to Other Page</button>[m
+[32m+[m[32m    </div>[m
+   );[m
+ }[m
